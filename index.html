@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Center</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- container for searching a movie-->
+    <div id="container-search">
+
+        <div id="logo">
+           <img src="MovieCenter Logo.png" alt="logo">
+
+           <button onclick="see_wish_list()" id="wish_list_button" > <svg stroke="currentColor" fill="white" stroke-width="0" viewBox="0 0 576 512" height="2em" width="2em" xmlns="http://www.w3.org/2000/svg"><path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"></path></svg></button>
+        </div>
+
+
+        <input type="text" placeholder="Search for a movie...">
+        
+        <div onclick="search_movie_btn()" id="search_btn_all">
+            <button type="submit"></button>
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg>
+        </div>
+
+    </div>
+    <br>
+
+    <button onclick="see_wish_list()" id="wish_list_buttonn" > <svg stroke="currentColor" fill="white" stroke-width="0" viewBox="0 0 576 512" height="2em" width="2em" xmlns="http://www.w3.org/2000/svg"><path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"></path></svg></button>
+
+
+    
+
+    <!-- container for wish list-->
+    <div id="container-wish_list">
+
+        <h2>Wish List</h2>
+        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="2em" width="2em" xmlns="http://www.w3.org/2000/svg"><path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"></path></svg>
+        <hr>
+        
+        <div id="ol_wish_list">
+            <ul> 
+
+
+            </ul>
+        </div>
+
+        
+            <h3>Total: </h3>
+
+            <a href="order_page.html"><button onclick="switch_to_order()">Order Now!</button></a>   
+
+
+        <!--  
+            <button onclick="switch_to_order()">Order Now!</button>  
+                         -->
+
+
+        
+    </div>
+
+    <!-- container for picking a movie-->
+    <div id="container-moives">
+
+        
+        <div class="movie">
+
+                <img src="spdierman.jpg" alt="Spider-man 1">
+
+                <div id="movie-desc">
+                    <h3 title="spiderman" id="name">Spider-man </h3>
+                    <h3 id="rating">Rating: 9.8/10</h3>
+                </div>
+
+    <h6 id="spiderman1" value="15.00" >price: 15.00$</h6>
+                <h4 id="spiderman1" value="15.00" >price: 15.00$</h4>
+
+                <svg onclick="add_to_wishList(this)" stroke="currentColor" fill="currentColor" color="white" stroke-width="0" viewBox="0 0 512 512"  xmlns="http://www.w3.org/2000/svg"><path d="M368.5 240H272v-96.5c0-8.8-7.2-16-16-16s-16 7.2-16 16V240h-96.5c-8.8 0-16 7.2-16 16 0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7H240v96.5c0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7 8.8 0 16-7.2 16-16V272h96.5c8.8 0 16-7.2 16-16s-7.2-16-16-16z"></path></svg>
+
+
+        </div>
+        
+        <div class="movie">
+
+                <img src="ronaldo.jpg" alt="Ronaldo">
+                <div id="movie-desc">
+                    <h3 title="ronaldo" id="name">Ronaldo</h3>
+                    <h3 id="rating">Rating: 7.2/10</h3>
+                </div>
+            
+    <h6 id="ronaldo1" value="9.99" >price: 9.99$</h6>
+                <h4 id="ronaldo1" value="9.99" >price: 9.99$</h4>
+                <svg onclick="add_to_wishList(this)" stroke="currentColor" fill="currentColor" color="white" stroke-width="0" viewBox="0 0 512 512"  xmlns="http://www.w3.org/2000/svg"><path d="M368.5 240H272v-96.5c0-8.8-7.2-16-16-16s-16 7.2-16 16V240h-96.5c-8.8 0-16 7.2-16 16 0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7H240v96.5c0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7 8.8 0 16-7.2 16-16V272h96.5c8.8 0 16-7.2 16-16s-7.2-16-16-16z"></path></svg>
+
+
+
+        </div>
+
+        <div class="movie">
+
+                <img src="the_boys.jpg" alt="the_boys">
+                
+                <div id="movie-desc">
+                    <h3 title="the_boys" id="name">The Boys</h3>
+                    <h3 id="rating">Rating: 8.9/10</h3>
+                </div>    
+
+    <h6 id="the_boys1" value="14.99" >price: 14.99$</h6>
+    
+                <h4 id="the_boys1" value="14.99" >price: 14.99$</h4>
+                <svg onclick="add_to_wishList(this)" stroke="currentColor" fill="currentColor" color="white" stroke-width="0" viewBox="0 0 512 512"  xmlns="http://www.w3.org/2000/svg"><path d="M368.5 240H272v-96.5c0-8.8-7.2-16-16-16s-16 7.2-16 16V240h-96.5c-8.8 0-16 7.2-16 16 0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7H240v96.5c0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7 8.8 0 16-7.2 16-16V272h96.5c8.8 0 16-7.2 16-16s-7.2-16-16-16z"></path></svg>
+
+
+
+        </div>
+        
+        <div class="movie">
+
+                <img src="venom.jpg" alt="venom">
+
+                <div id="movie-desc">
+                    <h3 title="Venom" id="name">Venom</h3>
+                    <h3 id="rating">Rating: 8.2/10</h3>
+                </div>
+
+    <h6 id="Venom1" value="10.99" >price: 10.99$</h6>
+                <h4 id="Venom1" value="10.99" >price: 10.99$</h4>
+                <svg onclick="add_to_wishList(this)" stroke="currentColor" fill="currentColor" color="white" stroke-width="0" viewBox="0 0 512 512"  xmlns="http://www.w3.org/2000/svg"><path d="M368.5 240H272v-96.5c0-8.8-7.2-16-16-16s-16 7.2-16 16V240h-96.5c-8.8 0-16 7.2-16 16 0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7H240v96.5c0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7 8.8 0 16-7.2 16-16V272h96.5c8.8 0 16-7.2 16-16s-7.2-16-16-16z"></path></svg>
+
+
+        </div>
+
+        <div class="movie">
+
+                <img src="fnaf.jpg" alt="fnaf">
+
+                <div id="movie-desc">
+                    <h3 title="fnaf" id="name">FNaF</h3>
+                    <h3 id="rating">Rating: 9.1/10</h3>
+                </div>
+
+    <h6 id="fnaf1" value="15.00" >price: 15.00$</h6>
+                <h4 id="fnaf1" value="15.00" >price: 15.00$</h4>
+                <svg onclick="add_to_wishList(this)" stroke="currentColor" fill="currentColor" color="white" stroke-width="0" viewBox="0 0 512 512"  xmlns="http://www.w3.org/2000/svg"><path d="M368.5 240H272v-96.5c0-8.8-7.2-16-16-16s-16 7.2-16 16V240h-96.5c-8.8 0-16 7.2-16 16 0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7H240v96.5c0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7 8.8 0 16-7.2 16-16V272h96.5c8.8 0 16-7.2 16-16s-7.2-16-16-16z"></path></svg>
+
+
+        </div>
+        
+        <div class="movie">
+                <img src="el_camino.jpg" alt="el_camino">
+
+                <div id="movie-desc">
+                    <h3 title="el_camino" id="name">El Camino</h3>
+                    <h3 id="rating">Rating: 9.6/10</h3>
+                </div>
+                
+    <h6 id="el_camino1" value="19.99" >price: 19.99$</h6>
+                <h4 id="el_camino1" value="19.99" >price: 19.99$</h4>
+                <svg onclick="add_to_wishList(this)" stroke="currentColor" fill="currentColor" color="white" stroke-width="0" viewBox="0 0 512 512"  xmlns="http://www.w3.org/2000/svg"><path d="M368.5 240H272v-96.5c0-8.8-7.2-16-16-16s-16 7.2-16 16V240h-96.5c-8.8 0-16 7.2-16 16 0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7H240v96.5c0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7 8.8 0 16-7.2 16-16V272h96.5c8.8 0 16-7.2 16-16s-7.2-16-16-16z"></path></svg>
+
+        </div>
+          
+        <div class="movie">
+
+            <img src="spdierman.jpg" alt="Spider-man 1">
+
+            <div id="movie-desc">
+                <h3 title="spiderman" id="name">Spider-man </h3>
+                <h3 id="rating">Rating: 9.8/10</h3>
+            </div>
+
+    <h6 id="spiderman1" value="15.00" >price: 15.00$</h6>
+            <h4 id="spiderman1" value="15.00" >price: 15.00$</h4>
+            <svg onclick="add_to_wishList(this)" stroke="currentColor" fill="currentColor" color="white" stroke-width="0" viewBox="0 0 512 512"  xmlns="http://www.w3.org/2000/svg"><path d="M368.5 240H272v-96.5c0-8.8-7.2-16-16-16s-16 7.2-16 16V240h-96.5c-8.8 0-16 7.2-16 16 0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7H240v96.5c0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7 8.8 0 16-7.2 16-16V272h96.5c8.8 0 16-7.2 16-16s-7.2-16-16-16z"></path></svg>
+
+
+
+    </div>
+    
+    <div class="movie">
+
+            <img src="ronaldo.jpg" alt="Ronaldo">
+            <div id="movie-desc">
+                <h3 title="ronaldo" id="name">Ronaldo</h3>
+                <h3 id="rating">Rating: 7.2/10</h3>
+            </div>
+        
+    <h6 id="ronaldo1" value="9.99" >price: 9.99$</h6>
+            <h4 id="ronaldo1" value="9.99" >price: 9.99$</h4>
+            <svg onclick="add_to_wishList(this)" stroke="currentColor" fill="currentColor" color="white" stroke-width="0" viewBox="0 0 512 512"  xmlns="http://www.w3.org/2000/svg"><path d="M368.5 240H272v-96.5c0-8.8-7.2-16-16-16s-16 7.2-16 16V240h-96.5c-8.8 0-16 7.2-16 16 0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7H240v96.5c0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7 8.8 0 16-7.2 16-16V272h96.5c8.8 0 16-7.2 16-16s-7.2-16-16-16z"></path></svg>
+
+
+
+    </div>
+
+    <div class="movie">
+
+            <img src="the_boys.jpg" alt="the_boys">
+            
+            <div id="movie-desc">
+                <h3 title="the_boys" id="name">The Boys</h3>
+                <h3 id="rating">Rating: 8.9/10</h3>
+            </div>    
+
+    <h6 id="the_boys1" value="14.99" >price: 14.99$</h6>
+
+            <h4 id="the_boys1" value="14.99" >price: 14.99$</h4>
+            <svg onclick="add_to_wishList(this)" stroke="currentColor" fill="currentColor" color="white" stroke-width="0" viewBox="0 0 512 512"  xmlns="http://www.w3.org/2000/svg"><path d="M368.5 240H272v-96.5c0-8.8-7.2-16-16-16s-16 7.2-16 16V240h-96.5c-8.8 0-16 7.2-16 16 0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7H240v96.5c0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7 8.8 0 16-7.2 16-16V272h96.5c8.8 0 16-7.2 16-16s-7.2-16-16-16z"></path></svg>
+
+
+
+    </div>
+    
+    <div class="movie">
+
+            <img src="venom.jpg" alt="venom">
+
+            <div id="movie-desc">
+                <h3 title="Venom" id="name">Venom</h3>
+                <h3 id="rating">Rating: 8.2/10</h3>
+            </div>
+
+    <h6 id="Venom1" value="10.99" >price: 10.99$</h6>
+            <h4 id="Venom1" value="10.99" >price: 10.99$</h4>
+            <svg onclick="add_to_wishList(this)" stroke="currentColor" fill="currentColor" color="white" stroke-width="0" viewBox="0 0 512 512"  xmlns="http://www.w3.org/2000/svg"><path d="M368.5 240H272v-96.5c0-8.8-7.2-16-16-16s-16 7.2-16 16V240h-96.5c-8.8 0-16 7.2-16 16 0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7H240v96.5c0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7 8.8 0 16-7.2 16-16V272h96.5c8.8 0 16-7.2 16-16s-7.2-16-16-16z"></path></svg>
+
+
+    </div>
+
+    <div class="movie">
+
+            <img src="fnaf.jpg" alt="fnaf">
+
+            <div id="movie-desc">
+                <h3 title="fnaf" id="name">FNaF</h3>
+                <h3 id="rating">Rating: 9.1/10</h3>
+            </div>
+
+    <h6 id="fnaf1" value="15.00" >price: 15.00$</h6>
+            <h4 id="fnaf1" value="15.00" >price: 15.00$</h4>
+            <svg onclick="add_to_wishList(this)" stroke="currentColor" fill="currentColor" color="white" stroke-width="0" viewBox="0 0 512 512"  xmlns="http://www.w3.org/2000/svg"><path d="M368.5 240H272v-96.5c0-8.8-7.2-16-16-16s-16 7.2-16 16V240h-96.5c-8.8 0-16 7.2-16 16 0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7H240v96.5c0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7 8.8 0 16-7.2 16-16V272h96.5c8.8 0 16-7.2 16-16s-7.2-16-16-16z"></path></svg>
+
+
+    </div>
+    
+    <div class="movie">
+            <img src="el_camino.jpg" alt="el_camino">
+
+            <div id="movie-desc">
+                <h3 title="el_camino" id="name">El Camino</h3>
+                <h3 id="rating">Rating: 9.6/10</h3>
+            </div>
+            
+    <h6 id="el_camino1" value="19.99" >price: 19.99$</h6>
+            <h4 id="el_camino1" value="19.99" >price: 19.99$</h4>
+            <svg onclick="add_to_wishList(this)" stroke="currentColor" fill="currentColor" color="white" stroke-width="0" viewBox="0 0 512 512"  xmlns="http://www.w3.org/2000/svg"><path d="M368.5 240H272v-96.5c0-8.8-7.2-16-16-16s-16 7.2-16 16V240h-96.5c-8.8 0-16 7.2-16 16 0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7H240v96.5c0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7 8.8 0 16-7.2 16-16V272h96.5c8.8 0 16-7.2 16-16s-7.2-16-16-16z"></path></svg>
+
+    </div>
+
+
+
+
+    
+
+    <script src="logic.js"></script>
+</body>
+</html>

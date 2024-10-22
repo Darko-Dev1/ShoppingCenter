@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap');
+
+body {
+
+    background-color: rgb(0, 0, 0);
+    
+
+
+}
+
+
+
+#container-search {
+
+    background-color: black;
+    text-align: center;
+    position: relative;
+    height: 100px;
+
+    
+}
+
+#container-search #logo {
+
+    position: relative;
+    width: 40%;
+    margin: auto;
+
+
+
+}
+
+#container-search #logo img {
+
+    height: 80px;
+    width: 70%;
+    margin-bottom: -3%;
+    
+
+}
+
+
+#container-search #logo h1 {
+
+    font-family: "Sixtyfour Convergence", sans-serif;
+    font-size: 200%;
+    text-align: center;
+
+}
+
+#container-search input {
+
+    margin-top: 1%;
+    width: 39%;
+    height: 38%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 100%;
+    padding-left: 1%;
+
+}
+
+#container-search #search_btn_all {
+
+    margin: auto;
+    width: 3%;
+    height: 38%;
+    border-radius: 5px;
+    border: black solid 1px;
+    transform: translate(600%, -100%);
+
+
+}
+
+#container-search #search_btn_all button {
+
+    width: 100%;
+    height: 100%;
+        background-color: white;
+        border-radius: 5px;
+
+}
+
+#container-search #search_btn_all svg {
+
+    z-index: 10;
+    transform: translate(0px, -170%);
+
+}
+
+/*  wish list*/
+
+
+#container-wish_list {
+
+    position: relative;
+    background: rgb(0,0,0);
+    background: linear-gradient(317deg, rgba(0,0,0,1) 70%, rgba(255,0,0,1) 100%);
+    width: 20%;
+    height: 500px;
+    text-align: center;
+    padding-top: 1%;
+    z-index: 10;
+    transform: translate(0px, 2%);
+    border: red solid 2px;
+    color: white;
+    border-radius: 10px;
+    font-family: sans-serif;
+    margin-top: 1%;
+
+
+}
+
+#container-wish_list h3 {
+
+    transform: translate(0px, 50%);
+
+} 
+
+#container-wish_list button {
+
+    transform: translate(0px, 5%);
+    width: 70%;
+    height: 10%;
+    font-size: 15px;
+    transition: 300ms;
+
+}
+
+a button{
+
+    color: white;
+    background: radial-gradient(circle, rgba(0,0,0,1) 100%, rgba(255,0,0,1) 0%);
+    transition: 2s;
+
+}
+
+a button:hover {
+
+        
+    background: radial-gradient(circle, rgba(0,0,0,1) 41%, rgba(255,0,0,1) 100%);
+    
+
+}
+
+hr {
+
+    border: red solid 1px;
+
+}
+
+
+
+#ol_wish_list {
+
+
+    height: 50%;
+    font-size: 25px;
+    overflow-y: auto;
+
+
+li {
+
+    cursor: pointer;
+    
+
+}
+
+
+
+#list_of_movie_name button {
+
+    width: 13%;
+    padding: 0.0001%;
+    text-align: center;
+    display: block;
+    transform: translate(650%, -160%);
+
+
+}
+
+#container-wish_list button:hover {
+
+    background-color: rgb(0,0,0);
+    background-color: radial-gradient(circle, rgba(0,0,0,1) 71%, rgba(255,0,0,1) 100%);
+
+}
+
+#list_of_movie_name button svg {
+
+    font-size: 150%;
+
+
+
+}
+
+}
+
+/* container for the movie choice   */
+
+#container-moives {
+
+    margin: auto;
+    position: relative;
+
+    background: rgb(0,0,0);
+    background: linear-gradient(360deg, rgba(0,0,0,1) 85%, rgba(255,0,0,1) 100%);
+    width: 70%;
+    border: red solid 2px;
+    border-radius: 10px;
+    height: 800px;
+    display: flex;               /* Enable Flexbox */
+    flex-wrap: wrap;            /* Allow wrapping */
+    padding-left: 4.5%;
+    overflow: auto;
+    margin-top: -508px;
+    margin-left: 23%;
+
+
+
+
+}
+
+/*needs to have ::-webkit-scrollbar to be able to access all comands*/
+
+
+#container-moives::-webkit-scrollbar {
+
+        background-color: transparent;
+
+}
+#container-moives::-webkit-scrollbar-thumb {
+
+    background-color: white;
+    border-radius: 10px;
+
+
+
+}
+
+.movie {
+
+    width: 21%;
+    margin-top: 1%;
+    margin-left: 1%;
+    border: white solid 2px;
+    margin-right: 1%;
+    text-align: center;
+    border-radius: 5px;
+    height: 50%;
+    margin: 1%;                /* Add some spacing */
+    max-width: calc(25% - 10px);
+    font-size: 70%;
+    font-family: sans-serif;
+
+
+}
+img {
+
+    width: 100%;
+    height: 220px;
+
+}
+
+h3 {
+
+    color: white;
+    font-family: "Sixtyfour Convergence", sans-serif;
+}
+
+h6 {
+
+    opacity: 0%;
+
+}
+
+#movie-desc {
+
+
+    height: 55px;
+
+}
+h4 {
+
+    color: white;
+}
+
+.movie svg {
+
+
+    width: 25%;
+    height: 7%;
+    border: white solid 1px;
+    border-radius: 10px;
+    padding-left: 10%;
+    padding-right: 10%;
+    background: rgb(0,0,0);
+    transition: 1000ms;
+
+}
+.movie svg:hover{
+
+
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(255,0,0,1) 100%);
+
+}
+
+
+
+/* ordering page */
+
+
+#order_page_body {
+
+    background-color: black;
+    color: white;
+
+    font-size: 80%
+
+
+
+}
+
+#Payment_method {
+
+    margin: auto;
+    width: 70%;
+
+    background-color: rgb(94, 27, 27);
+
+}
+
+#Payment_method select{
+    margin: 2%;
+
+    width: 30%;
+
+}
+
+
+
+#Payment_method #two {
+
+    margin-left: 2%;
+    
+
+}
+
+#Payment_method #three{
+    margin-top: 2%;
+    margin-left: 2%;
+
+}
+
+#Payment_method #three input{
+
+    width: 10%;
+
+}
+
+#nav_bar {
+
+
+
+
+    margin-bottom: 5%;
+
+}
+
+#nav_bar img {
+
+    position: relative;
+    width: 20%;
+    height: 40%;
+    left: 80%
+
+
+}
+
+#billing_information {
+
+    margin: auto;
+    width: 70%;
+
+    background-color: rgb(94, 27, 27);
+
+}
+
+
+#wish_list_button {
+
+    display: none;
+
+}
+#wish_list_buttonn {
+
+    display: none;
+
+}
+
+
+/*responsive here*/
+
+@media (max-width: 915px) {
+
+
+
+    #container-wish_list {
+
+        display: none;
+        width: 99%;
+        margin-top: -20%;
+        z-index: -1;
+        height: 915px;
+
+
+
+    }
+
+    #container-moives {
+
+        margin-left: -1%;
+        overflow: hidden;
+        margin-top: 20%;
+        border-radius: 10px ;
+        padding-left: 2.3%;
+
+        width: 98.7%;
+
+        height: 100%;
+
+        
+
+    }
+
+    .movie {
+
+        width: 90%;
+        margin-top: 66%;
+        margin-left: 1%;
+        border: white solid 2px;
+        margin-right: 1%;
+        text-align: center;
+        border-radius: 5px;
+        height: 10%;
+        margin: 1%;                /* Add some spacing */
+        max-width: calc(32% - 10px);
+        font-size: 70%;
+        font-family: sans-serif;
+        overflow: auto;
+    
+    
+    }
+
+
+    #container-search {
+
+        width: 395px;
+        margin: auto;
+
+
+
+
+    }
+
+    #container-search #logo {
+
+
+
+        margin-left: 0%;
+        padding-top: 40px;
+        margin-bottom: -5%;
+        
+            
+    }
+
+    #container-search #logo img {
+
+        width: 100%;
+        height: 50px;
+        
+
+    }
+
+
+    #container-search input {
+
+        border-radius: 20px;
+        width: 80%;
+        padding: 20px;
+        margin-top: 5%;
+        height: 1px;
+
+    }
+
+    #container-moives::-webkit-scrollbar-thumb {
+
+        display: none;
+
+    }
+
+    #container-search #logo #wish_list_button {
+
+        background-color: transparent;
+        width: 40px;
+        height: 40px;
+        border-radius: 100px;
+        display: block;
+        transform: translate(850%, -115%);
+        
+    }
+
+    #container-search #search_btn_all {
+
+        margin: auto;
+        width: 10%;
+        height: 41%;
+        border-radius: 40px;
+        border: black solid 0px;
+        transform: translate(400%, -100%);
+        background-color: aqua;
+
+    
+    
+    }
+    
+    #container-search #search_btn_all button {
+    
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        border-radius: 40px;
+            
+    
+    }
+    
+    #container-search #search_btn_all svg {
+    
+        z-index: 10;
+        transform: translate(0px, -180%);
+    
+    }
+
+    #wish_list_buttonn {
+
+        display: none;
+        background-color: transparent;
+        width: 40px;
+        height: 40px;
+        border-radius: 100px;
+        transform: translate(850%, 50%);
+        
+
+    }
+
+
+
+
+}
