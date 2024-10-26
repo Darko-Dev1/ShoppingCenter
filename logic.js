@@ -13,10 +13,115 @@ let heck = [];
 ttt = 0
 
 
+//taking all the movies possible to search for
+let allMoviesCurrent = []
+let allMoviesFinding = []
+
+let nameMovie = document.querySelectorAll("#name")
+let take_all_possible_movies_in_store = document.querySelectorAll("#movie-desc")
+
+
+for (movies of nameMovie ) {
+
+    allMoviesCurrent.push(movies.innerHTML)
+    allMoviesFinding.push(movies)
+
+    
+}
+console.log(allMoviesCurrent)
+
+console.log(allMoviesFinding)
+
+let take_placeholder = document.querySelector("input")
+
 
 
 
 let price_of_movies = 0
+
+
+function search_movie_btn() {
+
+    let inputSearch = document.querySelector("input").value
+    console.log(inputSearch)
+    let take_contianer = document.querySelector("#container-moives h1")
+
+    
+    
+    //search through the list of movies
+
+    for (movie of allMoviesCurrent) {
+
+        let take_allMovies = document.querySelectorAll(".movie")
+        let taking_index = 0
+
+        let make_upper_lower = toString(movie)
+
+        let upper = movie.toUpperCase()
+        let lower = movie.toLowerCase()
+
+        
+
+            if (inputSearch === movie || inputSearch === upper || inputSearch === lower) {
+
+                for (divs of take_allMovies) {
+
+                    divs.style.display = "none"
+        
+                }
+        
+                
+                let taking_index = allMoviesCurrent.indexOf(movie)
+                let find_moviedesc = allMoviesFinding[taking_index]
+                let find_class = find_moviedesc.closest(".movie")
+                console.log(find_class)
+                find_class.style.display = "block"
+                take_placeholder.value = inputSearch
+                take_contianer.style.display =  "none"
+                break
+
+
+
+            } 
+
+        
+        
+            else if(inputSearch === "") {
+
+                for (divs of take_allMovies) {
+
+                    divs.style.display = "block"
+                    take_placeholder.value = inputSearch
+        
+                }
+
+                take_contianer.style.display = "none"
+
+            } else {
+
+                for (divs of take_allMovies) {
+
+                    divs.style.display = "none"
+        
+                }
+
+                let take_contianer = document.querySelector("#container-moives h1")
+                take_contianer.style.display = "block"
+
+
+                
+
+
+
+
+
+            }
+        taking_index++
+  
+        
+    };
+
+}
 
 
 function add_to_wishList(element) {
@@ -176,23 +281,7 @@ function clicked_to_delete(element) {
 
 
 
-function switch_to_order() {
 
-    let get_the_wishlist_div = document.querySelector("#ol_wish_list")
-    let get_the_wishlist_ol = get_the_wishlist_div.firstElementChild
-    get_the_wishlist = document.querySelectorAll("li")
-    let c = parseInt(get_the_wishlist.length)
-
-
-    get_storage_array.push(c)
-    console.log(JSON.stringify(get_storage_array))
-
-    get_wishlist = c
-    console.log(c)
-
-
-
-}
 
 //the following code is for the order page
 
@@ -209,7 +298,10 @@ let num = 0;
 
 function see_wish_list() {
 
+    console.log("hey")
+
     const take_wishlist = document.querySelector("#container-wish_list");
+    console.log(take_wishlist)
     const take_logo = document.querySelector("#container-search")
     const take_movies = document.querySelector("#container-moives")
     const take_btn = document.querySelector("#wish_list_buttonn")
@@ -220,6 +312,61 @@ function see_wish_list() {
             take_movies.style.display = "none"
             take_btn.style.display = "block"
             num++
+
+            function clicked_to_delete(element) {
+
+    
+    
+                //makes the element.innertext into a list
+            
+                let take_id_element = element.getAttribute("id")
+                console.log(take_id_element)
+                take_id_element = take_id_element +"1"
+                console.log(take_id_element)
+                let take_id_moviee = document.getElementById(take_id_element)
+                console.log(take_id_moviee.getAttribute("value"))
+                let take_price_movie = take_id_moviee.getAttribute("value")
+            
+            
+            
+                
+                // Find the price element within that container
+            
+            
+                console.log(parseInt(element.getAttribute("value")))
+                console.log(parseInt(take_price_movie))
+                console.log(parseInt(price_of_movies))
+            
+                let this_first = parseInt(element.getAttribute("value")) * Math.round(take_price_movie)
+            
+                let price_change = parseInt(price_of_movies) - parseInt(this_first)
+            
+                if (price_change < 0 || price_change === 0) {
+            
+                    price_change = price_change - price_change
+                    console.log(price_change)
+                    all_the_movies_added = []
+                    console.log(all_the_movies_added)
+            
+                }
+                price_of_movies = price_change
+                
+            
+                console.log(element)
+            
+                let container_wish_list = document.getElementById("container-wish_list")
+                let closest_h3 = document.querySelector("h3")
+                let change_total = closest_h3.innerText = "Total: " + parseInt(price_change)+ "$"
+                console.log(closest_h3.innerHTML)
+            
+            
+                element.remove()
+            
+            
+            
+            
+            
+            }
 
     } else {
 
@@ -232,6 +379,24 @@ function see_wish_list() {
     }
 
     
+
+
+
+}
+
+function switch_to_order() {
+
+    let get_the_wishlist_div = document.querySelector("#ol_wish_list")
+    let get_the_wishlist_ol = get_the_wishlist_div.firstElementChild
+    get_the_wishlist = document.querySelectorAll("li")
+    let c = parseInt(get_the_wishlist.length)
+
+
+    get_storage_array.push(c)
+    console.log(JSON.stringify(get_storage_array))
+
+    get_wishlist = c
+    console.log(c)
 
 
 
